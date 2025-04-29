@@ -110,11 +110,33 @@
         <div class="login-box">
             <div class="box-title">e-ΜΑΕΠ</div>
             <h2>Σύνδεση:</h2>
-            <form action="login-process.php" method="post">
-                <input type="text" name="username" placeholder="Όνομα Χρήστη:" required><br>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" id="username" name="username" placeholder="Όνομα Χρήστη:" required><br>
                 <input type="password" name="password" placeholder="Κωδικός:" required><br>
                 <input type="submit" value="Σύνδεση">
             </form>
+            <script>
+                function handleLogin(event) {
+                    event.preventDefault();
+
+                    const username = document.getElementById('username').value.trim();
+
+                    if (username === 'ΦΧ') {
+                        window.location.href = 'fx.html';
+                    } else if (username === 'ΑΕΠ') {
+                        window.location.href = 'aep.html';
+                    } else if (username === 'ΤΧ') {
+                        window.location.href = 'tch.html';
+                    } else {
+                        alert('Μη έγκυρο όνομα χρήστη.\n'
+                            +'Εισαγετε στο username:\n'
+                            +'1.ΦΧ για να συνδεθείτε με τον ρόλο του Φορέα Χρηματοδότησης\n'
+                            +'2.ΑΕΠ για να συνδεθείτε με τον ρόλο του Αποδέκτη Έμμεσων Πληρωμών\n'
+                            +'3.ΤΧ για να συνδεθείτε με τον ρόλο του υπαλλήλου του Τμήματος Χρηματοδότησης'
+                        );
+                    }
+                }
+            </script>
         </div>
         <div class="copyright">
             Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων 
