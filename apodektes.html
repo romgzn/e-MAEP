@@ -3,82 +3,49 @@
 
 <html>
 <head>
-<style>
-footer {
-  background-color: #314E60;
-  padding: 10px;
-  text-align: left;
-  color: white;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 30px;
-}
-
-.logo {
-            width: 50px;
-            margin-right: 100px;
-        }
-
-nav {
-  float: left;
-  width: 40px;
-  height: 85%;
-  position: fixed;
-  background: #5887A5;
-  padding: 20px;
-  top: 105px;
-  left: 0;
-}
-
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.header-bar {
-            width: 100%;
-            background-color: white;
-            padding: 1px 70px;
-            box-sizing: border-box;
-            box-shadow: 0 10px 10px rgba(161, 177, 231, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #dad6d6;
-            position: absolute;
-            top: 0;
-            left: 0;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-}
-
-</style>
+  <head>
+    <link rel="stylesheet" href="geostyle.css">
+</head>
     
 </head>
 <body>
     <div class = "header-bar">
         <div class= "header-left">
     <header>
-        <h1><img src="logo.png" alt="minfin Logo" class="logo"> e-ΜΑΕΠ</h1>
+        <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
     </header>
     </div>
 </div>
-    <section>
-        <nav>
-          <ul>
-            <li><img src="home_icon.png" width="40px" heigth="40px"></li>
-            <li><img src="new_icon.png" width="40px" heigth="40px"></li>
-            <li><img src="home_screen_icon.png" width="41px" heigth="41px"></li>
-            <li><img src="manual_icon.png" width="40px" heigth="40px"></li>
-          </ul>
-        </nav>
 
+<section class="welcome-container">
+  <p class="welcome-message">Καλώς Ήρθατε</p>
+  <p class="sub-message">στο e-ΜΑΕΠ</p>
+</section>
+<nav>
+  <ul>
+      <li>
+          <a href="apodektes.html">
+              <img src="home_icon.png" width="40px" height="40px" title="Home">
+          </a>
+      </li>
+      <li>
+          <a href="apodektes_new.html">
+              <img src="new_icon.png" width="40px" height="40px" title="Υποβολή Νέας Αίτησης">
+          </a>
+      </li>
+      <li>
+          <a href="apodektes_tobechecked.html">
+              <img src="home_screen_icon.png" width="42px" height="42px" title="Προβολή Αιτήσεων">
+          </a>
+      </li>
+      
+      <li>
+          <a href="apodektes_manual.html">
+              <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
+          </a>
+      </li>
+  </ul>
+</nav>
     <footer>
         <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
     </footer>
