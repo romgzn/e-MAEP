@@ -62,7 +62,7 @@ nav ul {
 .welcome-container {
     font-family: 'Roboto', sans-serif;
     font-size:6vw;
-    opacity: 0.08;
+    opacity: 0.3;                                      /* Άλλαξα το opacity από 0.08 -> 0.3 δεν φαινόταν τίποτα */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,3 +82,32 @@ nav ul {
     color: #27333f;
     margin: 0;
 }
+
+.help-button {
+    position: fixed;
+    bottom: 100px; 
+    right: 60px;
+    width: 53px;
+    height: 53px;
+    background-color: #5887A5;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.help-button:hover {
+    background-color: #47718C;
+}
+
+.question-icon {
+    width: 43px;
+    height: 43px;
+}
+
