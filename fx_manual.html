@@ -2,6 +2,33 @@
 <html>
 <head>
     <link rel="stylesheet" href="geostyle.css">
+    <style>
+        .pdf-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .pdf-button {
+            background-color: #4d2ca5;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pdf-button:hover {
+            background-color: #1f1f7c;
+        }
+    </style>
 </head>
 <body>
 
@@ -32,16 +59,20 @@
             </li>
             <li>
                 <a href="fx_checked.html">
-                    <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες">
+                    <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες Αιτήσεις">
                 </a>
             </li>
             <li>
-                <a href="fx_manual.html">
+                <a href="fx_manual.html" target="_blank">
                     <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
                 </a>
             </li>
         </ul>
     </nav>
+
+    <div class="pdf-button-container">
+        <a class="pdf-button" href="fx_manual.pdf" target="_blank" download>Download/Open PDF</a>
+    </div>
 
     <footer>
         <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
