@@ -23,11 +23,71 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: -200px;
+        }
+        .welcome-container{
+            margin-top: 50px;
         }
 
         .pdf-button:hover {
             background-color: #1f1f7c;
         }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        #pdfContainer {
+            width: 80%;
+            height: 80vh;
+            margin: auto;
+            position: relative;
+            overflow: hidden; /* prevents outer scrollbar */
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: auto; /* allow iframe to scroll internally */
+        }
+
+        .fullscreen-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #4d2ca5;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+
+        .fullscreen-button:hover {
+            background-color: #1f1f7c;
+        }
+
+        .fullscreen-icon {
+            width: 28px;
+            height: 28px;
+        }
+
     </style>
 </head>
 <body>
@@ -42,7 +102,6 @@
 
     <section class="welcome-container">
         <p class="welcome-message">Εγχειρίδιο Χρήστη</p>
-        <p class="sub-message">στο e-ΜΑΕΠ</p>
     </section>
 
     <nav>
@@ -70,8 +129,71 @@
         </ul>
     </nav>
 
+
+    <div id="pdfContainer">
+        <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
+    
+        <!-- Fullscreen toggle button -->
+        <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
+            <img src="fullscreenbutton.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
+        </button>
+    </div>
+    
+    
+
+    
+
+    <script>
+
+            function toggleFullscreen() {
+                const container = document.getElementById("pdfContainer");
+                const icon = document.getElementById("fullscreenIcon");
+
+                if (
+                    document.fullscreenElement === container ||
+                    document.fullscreenElement === document.getElementById("pdfContainer")
+                ) {
+                    // Exit fullscreen
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    icon.src = "fullscreen-icon.png";
+                    icon.alt = "Enter Fullscreen";
+                } else {
+                    // Enter fullscreen
+                    if (container.requestFullscreen) {
+                        container.requestFullscreen();
+                    } else if (container.webkitRequestFullscreen) {
+                        container.webkitRequestFullscreen();
+                    } else if (container.mozRequestFullScreen) {
+                        container.mozRequestFullScreen();
+                    } else if (container.msRequestFullscreen) {
+                        container.msRequestFullscreen();
+                    }
+                    icon.src = "exit-fullscreen-icon.png";
+                    icon.alt = "Exit Fullscreen";
+                }
+            }
+
+            // Handle ESC key or other exit events
+            document.addEventListener("fullscreenchange", () => {
+                const icon = document.getElementById("fullscreenIcon");
+                if (!document.fullscreenElement) {
+                    icon.src = "fullscreen-icon.png";
+                    icon.alt = "Enter Fullscreen";
+                }
+            });
+        </script>
+
+
     <div class="pdf-button-container">
-        <a class="pdf-button" href="fx_manual.pdf" target="_blank" download>Download/Open PDF</a>
+        <a class="pdf-button" href="fx_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
     </div>
 
     <footer>
