@@ -134,9 +134,8 @@
     <div id="pdfContainer">
         <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
     
-        <!-- Fullscreen toggle button -->
         <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
-            <img src="fullscreenbutton.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
+            <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
         </button>
     </div>
     
@@ -154,7 +153,7 @@
                     document.fullscreenElement === container ||
                     document.fullscreenElement === document.getElementById("pdfContainer")
                 ) {
-                    // Exit fullscreen
+                    
                     if (document.exitFullscreen) {
                         document.exitFullscreen();
                     } else if (document.webkitExitFullscreen) {
@@ -164,10 +163,10 @@
                     } else if (document.msExitFullscreen) {
                         document.msExitFullscreen();
                     }
-                    icon.src = "fullscreen-icon.png";
+                    icon.src = "enterfulls.png";
                     icon.alt = "Enter Fullscreen";
                 } else {
-                    // Enter fullscreen
+                    
                     if (container.requestFullscreen) {
                         container.requestFullscreen();
                     } else if (container.webkitRequestFullscreen) {
@@ -177,16 +176,16 @@
                     } else if (container.msRequestFullscreen) {
                         container.msRequestFullscreen();
                     }
-                    icon.src = "exit-fullscreen-icon.png";
+                    icon.src = "exitfulls.png";
                     icon.alt = "Exit Fullscreen";
                 }
             }
 
-            // Handle ESC key or other exit events
+            
             document.addEventListener("fullscreenchange", () => {
                 const icon = document.getElementById("fullscreenIcon");
                 if (!document.fullscreenElement) {
-                    icon.src = "fullscreen-icon.png";
+                    icon.src = "enterfulls.png";
                     icon.alt = "Enter Fullscreen";
                 }
             });
