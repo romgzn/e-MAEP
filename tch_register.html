@@ -44,7 +44,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px; /* space between label and dropdown */
+            gap: 8px;
         }
 
         .dropdown-label label {
@@ -222,9 +222,14 @@
             if (!selectedOption.disabled) {
                 const name = selectedOption.innerHTML;
     
-                // Create list item with remove button
                 const li = document.createElement('li');
-                li.textContent = name;
+
+                const nameButton = document.createElement('a');
+                nameButton.href = `MockApplication.html?name=${encodeURIComponent(name)}`;
+                nameButton.textContent = name;
+                nameButton.target='_blank';
+                nameButton.classList.add('name-button'); // optional
+                nameButton.title = 'Προβολή στοιχείων';
     
                 const removeBtn = document.createElement('button');
                 removeBtn.innerHTML = '✖';
@@ -233,16 +238,15 @@
                 removeBtn.addEventListener('click', function () {
                     li.remove();
                 });
-    
+                
+                li.appendChild(nameButton);
                 li.appendChild(removeBtn);
                 document.getElementById('namesUl').appendChild(li);
     
-                // Optionally reset selection
                 select.selectedIndex = 0;
             }
         });
     </script>
-    
 
 </body>
 </html>

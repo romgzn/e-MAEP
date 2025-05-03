@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Αίτηση Δικαιούχου</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            padding: 40px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #47718C;
+            margin-bottom: 30px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field-title {
+            color: #47718C;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .field-content {
+            background-color: #eef4f7;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="header-title">Αίτηση Δικαιούχου</h1>
+
+    <div class="field">
+        <div class="field-title">ΑΦΜ</div>
+        <div class="field-content">123456789</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Επωνυμία Νομικού Προσώπου</div>
+        <div class="field-content">Επιχείρηση Ανάπτυξης</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Νομική Μορφή</div>
+        <div class="field-content">Αστική Μη Κερδοσκοπική Εταιρεία</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Καταστατικό ή Ιδρυτική Πράξη</div>
+        <div class="field-content">katastatiko_idrytiki_praxi.pdf</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Οργανόγραμμα και αποδεικτικά λειτουργίας οικονομικής υπηρεσίας</div>
+        <div class="field-content">organogramma_oikonomikis_ypiresias.pdf</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Φορολογική Ενημερότητα</div>
+        <div class="field-content">forologiki_enimerotita.pdf</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Ενάριθμος Έργου</div>
+        <div class="field-content">9988776655</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">ΙΒΑΝ Λογαριασμού</div>
+        <div class="field-content">GR1601101250000000012345678</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Τράπεζα τήρησης του Λογαριασμού</div>
+        <div class="field-content">Τράπεζα Πειραιώς</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Ελεγμένες οικονομικές καταστάσεις από ορκωτούς ελεγκτές</div>
+        <div class="field-content">oikonomikes_katastaseis_orkotou.pdf</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Βεβαίωση τήρησης τραπεζικού λογαριασμού (ΙΒΑΝ)</div>
+        <div class="field-content">vevaiosi_iban.pdf</div>
+    </div>
+
+    <div class="field">
+        <div class="field-title">Ασφαλιστική Ενημερότητα</div>
+        <div class="field-content">asfalistiki_enimerotita.pdf</div>
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    if (name) {
+        const decodedName = decodeURIComponent(name);
+        document.getElementById('header-title').textContent = `Αίτηση Δικαιούχου: ${decodedName}`;
+        document.title = `Αίτηση Δικαιούχου: ${decodedName}`;
+}
+</script>
+
+<div style="margin-top: 20px; text-align: center;">
+    <button id="approveBtn" title="Έγκριση Αίτησης" style="
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      margin-right: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    ">Έγκριση</button>
+  
+    <button id="rejectBtn" title="Αποστολή ενημερωτικού μυνήματος για διόρθωση" style="
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    ">Ενημέρωση Δικαιούχου: λανθασμένη υποβολή</button>
+  </div>
+
+  <script>
+    document.getElementById("approveBtn").addEventListener("click", function () {
+      alert("Επιτυχής έγκριση");
+    });
+  
+    document.getElementById("rejectBtn").addEventListener("click", function () {
+      window.open("https://mail.google.com", "_blank");
+    });
+  </script>
+
+</body>
+</html>
