@@ -24,6 +24,7 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease;
                 margin-top: -200px;
+                font-family: 'Roboto', sans-serif;
             }
             .welcome-container{
                 margin-top: 38px;
@@ -46,9 +47,9 @@
                 width: 80%;
                 height: 90vh;
                 margin: auto;
-                margin-top: 30px; /* Add this line */
+                margin-top: 30px;
                 position: relative;
-                overflow: hidden; /* prevents outer scrollbar */
+                overflow: hidden; 
                 z-index: 1;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             }
@@ -58,7 +59,7 @@
                 width: 100%;
                 height: 100%;
                 border: none;
-                overflow: auto; /* allow iframe to scroll internally */
+                overflow: auto; 
             }
 
             .fullscreen-button {
@@ -100,7 +101,7 @@
             </div>
             <div class = "header-right">
                 <a href="login.html">
-                    <img src="logout.png" alt="LogOut" width="40px" height="35px">
+                    <img src="logout.png" alt="LogOut" width="40px" height="35px" title="Αποσύνδεση">
                 </a>
             </div>
         </div>
@@ -128,7 +129,7 @@
                 </li>
             
                 <li>
-                    <a href="apodektes_manual.html" target="_blank">
+                    <a href="manual.html" target="_blank">
                         <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
                     </a>
                 </li>
@@ -136,7 +137,7 @@
         </nav>
 
         <div id="pdfContainer">
-            <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
+            <iframe id="pdfFrame" src="manual.pdf"></iframe>
     
             <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
                 <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
@@ -195,7 +196,7 @@
         </script>
 
         <div class="pdf-button-container">
-            <a class="pdf-button" href="apodektes_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
+            <a class="pdf-button" href="manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
         </div>
 
         <footer>

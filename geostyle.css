@@ -69,7 +69,7 @@ nav ul {
 .welcome-container {
     font-family: 'Roboto', sans-serif;
     font-size:6vw;
-    opacity: 0.3;                                      /* Άλλαξα το opacity από 0.08 -> 0.3 δεν φαινόταν τίποτα */
+    opacity: 0.3;   
     display: flex;
     flex-direction: column;
     align-items: center;
