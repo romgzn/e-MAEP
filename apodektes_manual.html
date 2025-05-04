@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="geostyle.css">
-    <style>
-        .pdf-button-container {
+    <head>
+        <link rel="stylesheet" href="geostyle.css">
+        <style>
+            .pdf-button-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -88,68 +88,73 @@
                 width: 28px;
                 height: 28px;
             }
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <div class="header-bar">
-        <div class="header-left">
-            <header>
-                <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
-            </header>
+        <div class = "header-bar">
+            <div class= "header-left">
+                <header>
+                    <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
+                </header>
+            </div>
+            <div class = "header-right">
+                <a href="login.html">
+                    <img src="logout.png" alt="LogOut" width="40px" height="35px">
+                </a>
+            </div>
         </div>
-    </div>
 
-    <section class="welcome-container">
-        <p class="welcome-message">Εγχειρίδιο Χρήστη</p>
-    </section>
+        <section class="welcome-container">
+            <p class="welcome-message">Εγχειρίδιο Χρήστη</p>
+        </section>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="apodektes.html">
-                    <img src="home_icon.png" width="40px" height="40px" title="Home">
-                </a>
-            </li>
-            <li>
-                <a href="apodektes_new.html">
-                    <img src="new_icon.png" width="40px" height="40px" title="Υποβολή Νέας Αίτησης">
-                </a>
-            </li>
-            <li>
-                <a href="apodektes_tobechecked.html">
-                    <img src="home_screen_icon.png" width="42px" height="42px" title="Προβολή Αιτήσεων">
-                </a>
-            </li>
+        <nav>
+            <ul>
+                <li>
+                    <a href="apodektes.html">
+                        <img src="home_icon.png" width="40px" height="40px" title="Home">
+                    </a>
+                </li>
+                <li>
+                    <a href="apodektes_new.html">
+                        <img src="new_icon.png" width="40px" height="40px" title="Υποβολή Νέας Αίτησης">
+                    </a>
+                </li>
+                <li>
+                    <a href="apodektes_tobechecked.html">
+                        <img src="home_screen_icon.png" width="42px" height="42px" title="Προβολή Αιτήσεων">
+                    </a>
+                </li>
             
-            <li>
-                <a href="apodektes_manual.html" target="_blank">
-                    <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
-                </a>
-            </li>
-        </ul>
-    </nav>
+                <li>
+                    <a href="apodektes_manual.html" target="_blank">
+                        <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-    <div id="pdfContainer">
-        <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
+        <div id="pdfContainer">
+            <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
     
-        <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
-            <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
-        </button>
-    </div>
+            <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
+                <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
+            </button>
+        </div>
     
-    
-
     
 
-    <script>
+    
+
+        <script>
             function toggleFullscreen() {
-                const container = document.getElementById("pdfContainer");
-                const icon = document.getElementById("fullscreenIcon");
+            const container = document.getElementById("pdfContainer");
+            const icon = document.getElementById("fullscreenIcon");
 
-                if (
-                    document.fullscreenElement === container ||
-                    document.fullscreenElement === document.getElementById("pdfContainer")
+            if (
+                document.fullscreenElement === container ||
+                document.fullscreenElement === document.getElementById("pdfContainer")
                 ) {
                     
                     if (document.exitFullscreen) {
@@ -187,19 +192,19 @@
                     icon.alt = "Enter Fullscreen";
                 }
             });
-    </script>
+        </script>
 
-    <div class="pdf-button-container">
-        <a class="pdf-button" href="apodektes_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
-    </div>
+        <div class="pdf-button-container">
+            <a class="pdf-button" href="apodektes_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
+        </div>
 
-    <footer>
-        <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
-    </footer>
+        <footer>
+            <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
+        </footer>
 
-    <a href="https://helpdesk.epde.gr:8181/helpdesk/questions/createquestion.zul?epixid=51866" target="_blank" class="help-button" title="Helpdesk e-ΠΔΕ">
-        <img src="questionmark.png" alt="Helpdesk e-ΠΔΕ" class="question-icon">
-    </a>
+        <a href="https://helpdesk.epde.gr:8181/helpdesk/questions/createquestion.zul?epixid=51866" target="_blank" class="help-button" title="Helpdesk e-ΠΔΕ">
+            <img src="questionmark.png" alt="Helpdesk e-ΠΔΕ" class="question-icon">
+        </a>
 
-</body>
+    </body>
 </html>

@@ -61,10 +61,15 @@ nav ul {
     align-items: center;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
 .welcome-container {
     font-family: 'Roboto', sans-serif;
     font-size:6vw;
-    opacity: 0.3;
+    opacity: 0.3;                                      /* Άλλαξα το opacity από 0.08 -> 0.3 δεν φαινόταν τίποτα */
     display: flex;
     flex-direction: column;
     align-items: center;
