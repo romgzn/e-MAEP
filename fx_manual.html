@@ -1,149 +1,154 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="geostyle.css">
-    <style>
-        .pdf-button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-        }
+    <head>
+        <link rel="stylesheet" href="geostyle.css">
+        <style>
+            .pdf-button-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50vh;
+            }
 
-        .pdf-button {
-            background-color: #4d2ca5;
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: -200px;
-        }
-        .welcome-container{
-            margin-top: 38px;
-        }
+            .pdf-button {
+                background-color: #4d2ca5;
+                border: none;
+                color: white;
+                padding: 15px 30px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-top: -200px;
+            }
+            .welcome-container{
+                margin-top: 38px;
+            }
 
-        .pdf-button:hover {
-            background-color: #1f1f7c;
-        }
+            .pdf-button:hover {
+                background-color: #1f1f7c;
+            }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 0;
-            padding-top: 80px;
-        }
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                margin: 0;
+                padding-top: 80px;
+            }
 
-        #pdfContainer {
-            width: 80%;
-            height: 90vh;
-            margin: auto;
-            margin-top: 30px; /* Add this line */
-            position: relative;
-            overflow: hidden; /* prevents outer scrollbar */
-            z-index: 1;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            overflow: auto; /* allow iframe to scroll internally */
-        }
-
-        .fullscreen-button {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: #4d2ca5;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-            transition: background-color 0.3s;
-            z-index: 10;
-        }
+            #pdfContainer {
+                width: 80%;
+                height: 90vh;
+                margin: auto;
+                margin-top: 30px; /* Add this line */
+                position: relative;
+                overflow: hidden; /* prevents outer scrollbar */
+                z-index: 1;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
 
 
-        .fullscreen-button:hover {
-            background-color: #1f1f7c;
-        }
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                overflow: auto; /* allow iframe to scroll internally */
+            }
 
-        .fullscreen-icon {
-            width: 28px;
-            height: 28px;
-        }
+            .fullscreen-button {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                background-color: #4d2ca5;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+                transition: background-color 0.3s;
+                z-index: 10;
+            }
 
-    </style>
-</head>
-<body>
 
-    <div class="header-bar">
-        <div class="header-left">
-            <header>
-                <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
-            </header>
+            .fullscreen-button:hover {
+                background-color: #1f1f7c;
+            }
+
+            .fullscreen-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class = "header-bar">
+            <div class= "header-left">
+                <header>
+                    <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
+                </header>
+            </div>
+            <div class = "header-right">
+                <a href="login.html">
+                    <img src="logout.png" alt="LogOut" width="40px" height="35px">
+                </a>
+            </div>
         </div>
-    </div>
 
-    <section class="welcome-container">
-        <p class="welcome-message">Εγχειρίδιο Χρήστη</p>
-    </section>
+        <section class="welcome-container">
+            <p class="welcome-message">Εγχειρίδιο Χρήστη</p>
+        </section>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="fx.html">
-                    <img src="home_icon.png" width="40px" height="40px" title="Home">
-                </a>
-            </li>
-            <li>
-                <a href="fx_tobechecked.html">
-                    <img src="home_screen_icon.png" width="41px" height="41px" title="Αιτήσεις προς Έγκριση">
-                </a>
-            </li>
-            <li>
-                <a href="fx_checked.html">
-                    <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες Αιτήσεις">
-                </a>
-            </li>
-            <li>
-                <a href="fx_manual.html" target="_blank">
-                    <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
-                </a>
-            </li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li>
+                    <a href="fx.html">
+                        <img src="home_icon.png" width="40px" height="40px" title="Home">
+                    </a>
+                </li>
+                <li>
+                    <a href="fx_tobechecked.html">
+                        <img src="home_screen_icon.png" width="41px" height="41px" title="Αιτήσεις προς Έγκριση">
+                    </a>
+                </li>
+                <li>
+                    <a href="fx_checked.html">
+                        <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες Αιτήσεις">
+                    </a>
+                </li>
+                <li>
+                    <a href="fx_manual.html" target="_blank">
+                        <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
 
-    <div id="pdfContainer">
-        <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
+        <div id="pdfContainer">
+            <iframe id="pdfFrame" src="mockuppdf.pdf"></iframe>
     
-        <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
-            <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
-        </button>
-    </div>
+            <button onclick="toggleFullscreen()" class="fullscreen-button" title="Toggle Full Screen">
+                <img src="enterfulls.png" alt="Fullscreen" class="fullscreen-icon" id="fullscreenIcon">
+            </button>
+        </div>
     
-    
-
     
 
-    <script>
+    
+
+        <script>
 
             function toggleFullscreen() {
                 const container = document.getElementById("pdfContainer");
@@ -192,17 +197,17 @@
         </script>
 
 
-    <div class="pdf-button-container">
-        <a class="pdf-button" href="fx_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
-    </div>
+        <div class="pdf-button-container">
+            <a class="pdf-button" href="fx_manual.pdf" target="_blank" title="Download PDF" download>Download PDF</a>
+        </div>
 
-    <footer>
-        <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
-    </footer>
+        <footer>
+            <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
+        </footer>
 
-    <a href="https://helpdesk.epde.gr:8181/helpdesk/questions/createquestion.zul?epixid=51866" target="_blank" class="help-button" title="Helpdesk e-ΠΔΕ">
-        <img src="questionmark.png" alt="Helpdesk e-ΠΔΕ" class="question-icon">
-    </a>
+        <a href="https://helpdesk.epde.gr:8181/helpdesk/questions/createquestion.zul?epixid=51866" target="_blank" class="help-button" title="Helpdesk e-ΠΔΕ">
+            <img src="questionmark.png" alt="Helpdesk e-ΠΔΕ" class="question-icon">
+        </a>
 
-</body>
+    </body>
 </html>

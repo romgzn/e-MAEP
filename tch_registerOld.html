@@ -1,221 +1,226 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="geostyle.css">
+    <head>
+        <link rel="stylesheet" href="geostyle.css">
 
-    <style>
-        .arrow-button {
-            background-color: #5887A5;
-            border: none;
-            border-radius: 50%;
-            padding: 0;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-            width: 45px;
-            height: 45px;
-        }
+        <style>
+            .arrow-button {
+                background-color: #5887A5;
+                border: none;
+                border-radius: 50%;
+                padding: 0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease;
+                width: 45px;
+                height: 45px;
+            }
 
-        .arrow-button:hover {
-            background-color: #5887A5;
-        }
+            .arrow-button:hover {
+                background-color: #5887A5;
+            }
 
-        .arrow-image {
-            width: 24px;
-            height: 24px;
-        }
+            .arrow-image {
+                width: 24px;
+                height: 24px;
+            }
 
-        .selector-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 90px;
-        }
+            .selector-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 90px;
+            }
 
-        .selector-section {
-            display: flex;
-            align-items: flex-start;
-            gap: 90px;
-        }
+            .selector-section {
+                display: flex;
+                align-items: flex-start;
+                gap: 90px;
+            }
 
-        .dropdown-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
+            .dropdown-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
 
-        .dropdown-label label {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 0px;
-        margin-left: 0px;
-        }
+            .dropdown-label label {
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 0px;
+                margin-left: 0px;
+            }
 
       
-        .dropdown-box label {
-            font-size: 16px;
-            margin-bottom: 5px;
-            align-self: flex-start;
-        }
+            .dropdown-box label {
+                font-size: 16px;
+                margin-bottom: 5px;
+                align-self: flex-start;
+            }
 
-        .dropdown-box select {
-            padding: 10px;
-            width: 250px;
-            font-size: 16px;
-            border: 2px solid #aaa;
-            border-radius: 6px;
-            appearance: none;
-            background-color: white;
-        }
+            .dropdown-box select {
+                padding: 10px;
+                width: 250px;
+                font-size: 16px;
+                border: 2px solid #aaa;
+                border-radius: 6px;
+                appearance: none;
+                background-color: white;
+            }
 
-        .dropdown-box select:focus {
-            outline: none;
-        }
+            .dropdown-box select:focus {
+                outline: none;
+            }
 
-        .arrow-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
+            .arrow-button {
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
 
-        .arrow-button img {
-            width: 40px;
-            height: 40px;
-        }
+            .arrow-button img {
+                width: 40px;
+                height: 40px;
+            }
 
-        .selected-names-box {
-            border: 3px solid #47718C;
-            min-height: 100px;
-            width: 250px;
-            padding: 10px;
-            border-radius: 6px;
-            background-color: #f8f8f8;
-        }
+            .selected-names-box {
+                border: 3px solid #47718C;
+                min-height: 100px;
+                width: 250px;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #f8f8f8;
+            }
 
 
-        #selectedNamesList ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-        }
+            #selectedNamesList ul {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+            }
 
-        #selectedNamesList li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #e6e6e6;
-            padding: 6px 10px;
-            border-radius: 4px;
-            margin-bottom: 5px;
-        }
+            #selectedNamesList li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #e6e6e6;
+                padding: 6px 10px;
+                border-radius: 4px;
+                margin-bottom: 5px;
+            }
 
-        .remove-button {
-            background: none;
-            border: none;
-            color: #47718C;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 10px;
-        }
+            .remove-button {
+                background: none;
+                border: none;
+                color: #47718C;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 16px;
+                margin-left: 10px;
+            }
 
-        .selected-names-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+            .selected-names-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-        .list-title {
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+            .list-title {
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
 
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <div class="header-bar">
-        <div class="header-left">
-            <header>
-                <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
-            </header>
-        </div>
-    </div>
-
-    <section class="button-section">
-        <h2 class="checked-title">Εγγραφή στο απαραίτητο μητρώο</h2>
-        <p class="checked-description">Παρακάτω μπορείτε να διαλέξετε το ενδιαφερόμενο πρόσωπο,</p>
-        <p class="checked-description">να το περάσετε στην λίστα  και να αποδώσετε το αντίστοιχο μητρώο.</p>
-    </section>
-
-    <div class="selector-wrapper">
-        <div class="selector-section">
-            <div class="dropdown-box">
-                <div class="dropdown-label">
-                    <label for="nameSelect">Υποψήφιος δικαιούχος έμμεσης πληρωμής:</label>
-                </div>
-                <div class="dropdown-select">
-                    <select id="nameSelect">
-                        <option disabled selected>--Επιλέξτε--</option>
-                        <option>Αλέξανδρος Παπαδόπουλος</option>
-                        <option>Μαρία Κωνσταντίνου</option>
-                        <option>Γιώργος Δημητρίου</option>
-                        <option>Ελένη Αντωνίου</option>
-                    </select>
-                </div>
+        <div class = "header-bar">
+            <div class= "header-left">
+                <header>
+                    <h1><img src="logo.png" alt="minfin Logo" class="logo"><img src="e-MAEP_logo.png" alt="e-MAEP" width="170px" height="50px"></h1>
+                </header>
             </div>
-    
-            <button id="arrowButton" class="arrow-button">
-                <img src="rarrow.png" alt="Add" class="arrow-image">
-            </button>
-
-            <div class="selected-names-container">
-                <div class="list-title">Απόδοση μητρώου</div>
-                <div class="selected-names-box" id="selectedNamesList">
-                    <ul id="namesUl"></ul>
-                </div>
-            </div>  
-
+            <div class = "header-right">
+                <a href="login.html">
+                    <img src="logout.png" alt="LogOut" width="40px" height="35px">
+                </a>
+            </div>
         </div>
-    </div>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="tch.html">
-                    <img src="home_icon.png" width="40px" height="40px" title="Home">
-                </a>
-            </li>
-            <li>
-                <a href="tch_register.html">
-                    <img src="home_screen_icon.png" width="41px" height="41px" title="Εγγραφή στο Μητρώο">
-                </a>
-            </li>
-            <li>
-                <a href="tch_checked.html">
-                    <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες Αιτήσεις">
-                </a>
-            </li>
-            <li>
-                <a href="tch_manual.html" target="_blank">
-                    <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
-                </a>
-            </li>
-        </ul>
-    </nav>
+        <section class="button-section">
+            <h2 class="checked-title">Εγγραφή στο απαραίτητο μητρώο</h2>
+            <p class="checked-description">Παρακάτω μπορείτε να διαλέξετε το ενδιαφερόμενο πρόσωπο,</p>
+            <p class="checked-description">να το περάσετε στην λίστα  και να αποδώσετε το αντίστοιχο μητρώο.</p>
+        </section>
 
-    <footer>
-        <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
-    </footer>
+        <div class="selector-wrapper">
+            <div class="selector-section">
+                <div class="dropdown-box">
+                    <div class="dropdown-label">
+                        <label for="nameSelect">Υποψήφιος δικαιούχος έμμεσης πληρωμής:</label>
+                    </div>
+                    <div class="dropdown-select">
+                        <select id="nameSelect">
+                            <option disabled selected>--Επιλέξτε--</option>
+                            <option>Αλέξανδρος Παπαδόπουλος</option>
+                            <option>Μαρία Κωνσταντίνου</option>
+                            <option>Γιώργος Δημητρίου</option>
+                            <option>Ελένη Αντωνίου</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <button id="arrowButton" class="arrow-button">
+                    <img src="rarrow.png" alt="Add" class="arrow-image">
+                </button>
 
-    <script>
-        document.getElementById('arrowButton').addEventListener('click', function () {
+                <div class="selected-names-container">
+                    <div class="list-title">Απόδοση μητρώου</div>
+                    <div class="selected-names-box" id="selectedNamesList">
+                        <ul id="namesUl"></ul>
+                    </div>
+                </div>  
+
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="tch.html">
+                        <img src="home_icon.png" width="40px" height="40px" title="Home">
+                    </a>
+                </li>
+                <li>
+                    <a href="tch_register.html">
+                        <img src="home_screen_icon.png" width="41px" height="41px" title="Εγγραφή στο Μητρώο">
+                    </a>
+                </li>
+                <li>
+                    <a href="tch_checked.html">
+                        <img src="check_icon.png" width="40px" height="40px" title="Εγκεκριμένες Αιτήσεις">
+                    </a>
+                </li>
+                <li>
+                    <a href="tch_manual.html" target="_blank">
+                        <img src="manual_icon.png" width="40px" height="40px" title="Εγχειρίδιο Χρήστη">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <footer>
+            <p>Copyright © 2025 - Δικτυακή πύλη e-ΜΑΕΠ - Διεύθυνση Δημοσίων Επενδύσεων</p>
+        </footer>
+
+        <script>
+            document.getElementById('arrowButton').addEventListener('click', function () {
             const select = document.getElementById('nameSelect');
             const selectedOption = select.options[select.selectedIndex];
     
@@ -246,7 +251,7 @@
                 select.selectedIndex = 0;
             }
         });
-    </script>
+        </script>
 
-</body>
+    </body>
 </html>
